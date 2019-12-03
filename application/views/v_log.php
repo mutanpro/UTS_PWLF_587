@@ -1,21 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
 <head>
 	<meta charset="utf-8">
 	<title><?= $judul ?> - Pemrograman Web Framework Lanjut</title>
-
+	<link rel="stylesheet" href="<?= base_url('assets/css/') ?>bootstrap.min.css">
+	<link rel="stylesheet" href="<?= base_url('assets/css/') ?>jquery.dataTables.min.css">
 	<style type="text/css">
-		::selection {
-			background-color: #E13300;
-			color: white;
-		}
-
-		::-moz-selection {
-			background-color: #E13300;
-			color: white;
-		}
-
 		body {
 			background-color: #fff;
 			margin: 40px;
@@ -40,16 +32,7 @@
 			padding: 14px 15px 10px 15px;
 		}
 
-		code {
-			font-family: Consolas, Monaco, Courier New, Courier, monospace;
-			font-size: 12px;
-			background-color: #f9f9f9;
-			border: 1px solid #D0D0D0;
-			color: #002166;
-			display: block;
-			margin: 14px 0 14px 0;
-			padding: 12px 10px 12px 10px;
-		}
+
 
 		#body {
 			margin: 0 15px 0 15px;
@@ -69,34 +52,6 @@
 			border: 1px solid #D0D0D0;
 			box-shadow: 0 0 8px #D0D0D0;
 		}
-
-		#mahasiswa {
-			font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-			border-collapse: collapse;
-			width: 100%;
-		}
-
-		#mahasiswa td,
-		#mahasiswa th {
-			border: 1px solid #ddd;
-			padding: 8px;
-		}
-
-		#mahasiswa tr:nth-child(even) {
-			background-color: #f2f2f2;
-		}
-
-		#mahasiswa tr:hover {
-			background-color: #ddd;
-		}
-
-		#mahasiswa th {
-			padding-top: 12px;
-			padding-bottom: 12px;
-			text-align: left;
-			background-color: #4CAF50;
-			color: white;
-		}
 	</style>
 </head>
 
@@ -107,7 +62,7 @@
 			<a href="<?= base_url() ?>">
 				< Kembali </a> / Log Perubahan </h1> <div id="body">
 					<div id="content">
-						<table id="mahasiswa">
+						<table id="tabel" class="table table-striped table-bordered" style="width:100%">
 							<thead>
 								<th width="3%">No</th>
 								<th width="10%">NIM</th>
@@ -136,6 +91,14 @@
 	<p class="footer">Page rendered in <strong>{elapsed_time}</strong> seconds. <?php echo (ENVIRONMENT === 'development') ?  'CodeIgniter Version <strong>' . CI_VERSION . '</strong>' : '' ?></p>
 	</div>
 
+	<script src="<?= base_url('assets/js/') ?>jquery.min.js"></script>
+	<script src="<?= base_url('assets/js/') ?>jquery.dataTables.min.js"></script>
+	<script src="<?= base_url('assets/js/') ?>dataTables.bootstrap.min.js"></script>
+	<script>
+		$(function() {
+			$('#tabel').DataTable()
+		})
+	</script>
 </body>
 
 </html>
